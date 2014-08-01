@@ -1,0 +1,20 @@
+<h1 class="author">
+  <img ng-src="{{ shot.player.avatarUrl }}">
+  {{ shot.title }}
+  <small>{{ shot.player.username }}</small>
+</h1>
+
+<img ng-src="{{ shot.imageUrl }}">
+
+<div ng-bind-html="shot.description | playerLinks"></div>
+
+<ol>
+  <li ng-show="isLoading">Carregando...</li>
+
+  <li ng-hide="isLoading" ng-repeat="comment in comments">
+    <p>{{ comment.player.username }}</p>
+    <img ng-src="{{ comment.player.avatarUrl }}">
+    <p>{{ comment.body }}</p>
+    <p>{{ comment.createdAt | timeAgo }}</p>
+  </li>
+</ol>

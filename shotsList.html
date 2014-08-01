@@ -1,0 +1,16 @@
+<p ng-show="isLoading">Carregando...</p>
+
+<select ng-model="selectedListType" ng-options="listType for listType in listTypes"></select>
+
+<ul ng-show="!isLoading" class="shots">
+  <li ng-repeat="shot in shots">
+    <a ng-href="#/{{ shot.id }}">
+      <img ng-src="{{ shot.thumbUrl }}">
+    </a>
+
+    <strong>Por:</strong>: {{ shot.player.username }}
+    <strong>Likes</strong>: {{ shot.likesCount }}
+    <strong>Comments</strong>: {{ shot.commentsCount }}
+    <strong>Views</strong>: {{ shot.viewsCount }}
+  </li>
+</ul>
