@@ -1,16 +1,41 @@
-<p ng-show="isLoading">Carregando...</p>
+<ul class="shot-menu tabs">
+  <li ng-class="{ active: selectedListType == 'popular' }">
+    <a href ng-click="selectedListType = 'popular'">Popular</a>
+  </li>
 
-<select ng-model="selectedListType" ng-options="listType for listType in listTypes"></select>
+  <li ng-class="{ active: selectedListType == 'debuts' }">
+    <a href ng-click="selectedListType = 'debuts'">Debuts</a>
+  </li>
 
-<ul ng-show="!isLoading" class="shots">
-  <li ng-repeat="shot in shots">
-    <a ng-href="#/{{ shot.id }}">
-      <img ng-src="{{ shot.thumbUrl }}">
-    </a>
-
-    <strong>Por:</strong>: {{ shot.player.username }}
-    <strong>Likes</strong>: {{ shot.likesCount }}
-    <strong>Comments</strong>: {{ shot.commentsCount }}
-    <strong>Views</strong>: {{ shot.viewsCount }}
+  <li ng-class="{ active: selectedListType == 'everyone' }">
+    <a href ng-click="selectedListType = 'everyone'">Everyone</a>
   </li>
 </ul>
+
+<p ng-show="isLoading">Carregando...</p>
+
+<ol ng-show="!isLoading" class="dribbbles shots">
+  <li class="group" ng-repeat="shot in shots">
+    <div class="dribbble">
+      <div class="dribbble-shot">
+        <a ng-href="#/{{ shot.id }}">
+          <img ng-src="{{ shot.thumbUrl }}">
+        </a>
+
+        <table style="width: 100%">
+          <tbody>
+            <tr>
+              <td><strong>Por:</strong>: {{ shot.player.username }}</td>
+              <td><strong>Likes</strong>: {{ shot.likesCount }}</td>
+            </tr>
+
+            <tr>
+              <td><strong>Comments</strong>: {{ shot.commentsCount }}</td>
+              <td><strong>Views</strong>: {{ shot.viewsCount }}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </li>
+</ol>

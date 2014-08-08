@@ -2,14 +2,20 @@
 
 <html>
   <head>
-    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <link href="https://d13yacurqjgara.cloudfront.net/assets/master-4a0d7d5f6ff112444d02710005316470.css" media="screen, projection" rel="stylesheet" type="text/css" />
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.21/angular.min.js"></script>
     <script src="https://code.angularjs.org/1.2.21/angular-route.min.js"></script>
     <script src="https://code.angularjs.org/1.2.21/angular-sanitize.min.js"></script>
     <script src="dribbbble.js"></script>
   </head>
 
-  <body ng-app="dribbbble">
-    <ng-view></ng-view>
+  <body id="wrap" ng-app="dribbbble">
+    <div id="wrap-inner">
+      <div id="content">
+        <div class="main-full">
+          <ng-view></ng-view>
+        </div>
+      </div>
+    </div>
   </body>
 </html>
