@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <link href="/css/bootstrap.min.css" media="screen" rel="stylesheet" type="text/css" />
+    <script src="/js/angular.min.js"></script>
+  </head>
+
+  <body ng-app>
+    <div class="container">
+      <input type="text" ng-model="name">
+      <h1 class="{{ name }}">{{ name }}</h1>
+    </div>
+  </body>
+</html>

@@ -53,6 +53,7 @@ app.filter("playerLinks", function() {
   };
 });
 
+// NAO FAZER
 app.filter("timeAgo", function() {
   var tenMinutes = 10 * 60 * 1000,
       thirtyMinutes = 20 * 60 * 1000,

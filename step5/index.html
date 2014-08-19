@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <link href="/css/bootstrap.min.css" media="screen" rel="stylesheet" type="text/css" />
+    <script src="/js/angular.min.js"></script>
+    <script src="dribbbble.js"></script>
+  </head>
+
+  <body ng-app="dribbbbleApp">
+    <div class="container" ng-controller="ListShotsController">
+      <p ng-show="isLoading">Carregando</p>
+
+      <ul ng-hide="isLoading">
+        <li ng-repeat="shot in shots">
+          <img ng-src="{{ shot.image_teaser_url  }}">
+          <p>username: {{ shot.player.name }}</p>
+          <p>likes: {{ shot.likes_count }}</p>
+          <p>comments: {{ shot.comments_count }}</p>
+          <p>views: {{ shot.views_count }}</p>
+        </li>
+      </ul>
+    </div>
+  </body>
+</html>

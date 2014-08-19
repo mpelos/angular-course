@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <link href="/css/bootstrap.min.css" media="screen" rel="stylesheet" type="text/css" />
+    <script src="/js/angular.min.js"></script>
+
+    <script>
+      function FirstController($scope) {
+        $scope.name = "primeiro escopo";
+      }
+
+      function SecondController($scope) {
+        $scope.name = "segundo escopo";
+      }
+    </script>
+  </head>
+
+  <body ng-app>
+    <div class="container">
+      <input type="text" ng-model="name">
+      <h1 class="{{ name }}">{{ name }}</h1>
+
+      <div ng-controller="FirstController">
+        <input type="text" ng-model="name">
+        <h1 class="{{ name }}">{{ name }}</h1>
+      </div>
+
+      <div ng-controller="SecondController">
+        <input type="text" ng-model="name">
+        <h1 class="{{ name }}">{{ name }}</h1>
+      </div>
+    </div>
+  </body>
+</html>

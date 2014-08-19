@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <link href="/css/bootstrap.min.css" media="screen" rel="stylesheet" type="text/css" />
+    <script src="/js/angular.min.js"></script>
+    <script src="dribbbble.js"></script>
+  </head>
+
+  <body ng-app="dribbbbleApp">
+    <div class="container" ng-controller="ListShotsController">
+      <ul>
+        <li ng-repeat="shot in shots">
+          <img ng-src="{{ shot }}">
+        </li>
+      </ul>
+    </div>
+  </body>
+</html>
